@@ -1,35 +1,17 @@
-source 'http://rubygems.org'
-
-ruby "2.0.0"
+source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
+gem "mongo_mapper", '~> 0.13.0.beta2'
+gem 'libv8'
+gem "bson_ext"
+gem "execjs"
 
-gem 'google-webfonts-rails'
+# See https://github.com/sstephenson/execjs#readme for more supported runtimes
+gem 'therubyracer', platforms: :ruby
 
-# Use postgresql as the database for Active Record
-gem 'pg'
-
-# To extract sensitive configuration
-gem 'app_configuration'
-
-# Use unicorn as the app server
-gem 'unicorn'
-
-group :assets do
-  # Use SCSS for stylesheets
-  gem 'sass-rails',   '~> 4.0.0'
-
-  # Use CoffeeScript for .js.coffee assets and views
-  gem 'coffee-rails', '~> 4.0.0'
-
-  # Use Uglifier as compressor for JavaScript assets
-  gem 'uglifier', '>= 1.0.3'
-end
-
-gem "less-rails"
-gem "therubyracer"
-gem "twitter-bootstrap-rails"
+# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+gem 'jbuilder', '~> 1.2'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -44,14 +26,12 @@ gem 'turbolinks'
 
 gem 'jquery-turbolinks'
 
-gem 'devise'
+gem 'unicorn'
 
 #CodeClimate Reporter
 gem "codeclimate-test-reporter", group: :test, require: nil
 gem 'simplecov', require: false, group: :test
 
-# Active Admin
-gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'formtastic', github: 'justinfrench/formtastic'
 
 # Enables Slim templates
@@ -66,6 +46,16 @@ gem 'resque-scheduler', require: 'resque_scheduler'
 
 gem 'pundit'
 
+group :assets do
+  # Use SCSS for stylesheets
+  gem 'sass-rails',   '~> 4.0.0'
+
+  # Use CoffeeScript for .js.coffee assets and views
+  gem 'coffee-rails', '~> 4.0.0'
+
+  # Use Uglifier as compressor for JavaScript assets
+  gem 'uglifier', '>= 1.0.3'
+end
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
